@@ -1,0 +1,60 @@
+{
+  "name": "EcoDEX - Nature Discovery Game",
+  "short_name": "EcoDEX",
+  "description": "Discover, collect, and learn about plants and animals in your area. Pokemon Go for nature enthusiasts!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "games", "lifestyle", "science"],
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Camera",
+      "short_name": "Camera",
+      "description": "Take a photo to identify species",
+      "url": "/camera",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "My Collection",
+      "short_name": "Collection",
+      "description": "View your discovered species",
+      "url": "/ecodex",
+      "icons": [
+        {
+          "src": "logo192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}
