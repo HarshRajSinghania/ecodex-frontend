@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
 import AlertContext from '../../context/AlertContext';
-import axios from 'axios';
+import api from '../../utils/api';
 import './EcoDEX.css';
 
 const EcoDEX = () => {
@@ -35,7 +35,7 @@ const EcoDEX = () => {
         ...(filters.rarity && { rarity: filters.rarity })
       });
 
-      const response = await axios.get(`/api/ecodex/entries?${params}`);
+      const response = await api.get(`/api/ecodex/entries?${params}`);
       
       let filteredEntries = response.data.entries;
       
@@ -61,7 +61,7 @@ const EcoDEX = () => {
 
   const fetchStats = async () => {
     try {
-      const response = await axios.get('/api/ecodex/stats');
+      const response = await api.get('/api/ecodex/stats');
       setStats(response.data);
     } catch (error) {
       console.error('Error fetching stats:', error);

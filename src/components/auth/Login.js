@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../utils/api';
 import AuthContext from '../../context/AuthContext';
 import AlertContext from '../../context/AlertContext';
 import setAuthToken from '../../utils/setAuthToken';
@@ -36,7 +36,7 @@ const Login = () => {
 
       const body = JSON.stringify(user);
 
-      const res = await axios.post('/api/auth', body, config);
+      const res = await api.post('/api/auth', body, config);
 
       setAuthToken(res.data.token);
       loadUser();

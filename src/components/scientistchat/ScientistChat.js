@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
 import AlertContext from '../../context/AlertContext';
-import axios from 'axios';
+import api from '../../utils/api';
 import './ScientistChat.css';
 
 const ScientistChat = () => {
@@ -62,7 +62,7 @@ const ScientistChat = () => {
         formData.append('image', selectedImage);
       }
 
-      const response = await axios.post('/api/ecodex/chat', formData, {
+      const response = await api.post('/api/ecodex/chat', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

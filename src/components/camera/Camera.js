@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback, useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
 import AlertContext from '../../context/AlertContext';
-import axios from 'axios';
+import api from '../../utils/api';
 import './Camera.css';
 
 const Camera = () => {
@@ -380,7 +380,7 @@ const Camera = () => {
         formData.append('longitude', location.longitude);
       }
 
-      const response = await axios.post('/api/ecodex/identify', formData, {
+      const response = await api.post('/api/ecodex/identify', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

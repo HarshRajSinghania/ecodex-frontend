@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
-import axios from 'axios';
+import api from '../../utils/api';
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   const fetchRecentEntries = async () => {
     try {
-      const response = await axios.get('/api/ecodex/entries?limit=6&sort=-discoveredAt');
+      const response = await api.get('/api/ecodex/entries?limit=6&sort=-discoveredAt');
       setRecentEntries(response.data.entries);
     } catch (error) {
       console.error('Error fetching recent entries:', error);
@@ -26,7 +26,7 @@ const Dashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const response = await axios.get('/api/ecodex/stats');
+      const response = await api.get('/api/ecodex/stats');
       setStats(response.data);
     } catch (error) {
       console.error('Error fetching stats:', error);

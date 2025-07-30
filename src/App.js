@@ -15,7 +15,7 @@ import AuthContext from './context/AuthContext';
 import AlertContext from './context/AlertContext';
 import setAuthToken from './utils/setAuthToken';
 import { pwaManager } from './utils/pwaUtils';
-import axios from 'axios';
+import api from './utils/api';
 
 import './App.css';
 
@@ -72,7 +72,7 @@ const App = () => {
     }
 
     try {
-      const res = await axios.get('/api/auth');
+      const res = await api.get('/api/auth');
       setUser(res.data);
       setIsAuthenticated(true);
     } catch (err) {

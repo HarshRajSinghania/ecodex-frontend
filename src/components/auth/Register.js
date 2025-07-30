@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../utils/api';
 import AuthContext from '../../context/AuthContext';
 import AlertContext from '../../context/AlertContext';
 import setAuthToken from '../../utils/setAuthToken';
@@ -41,7 +41,7 @@ const Register = () => {
 
         const body = JSON.stringify(newUser);
 
-        const res = await axios.post('/api/users', body, config);
+        const res = await api.post('/api/users', body, config);
 
         setAuthToken(res.data.token);
         loadUser();
