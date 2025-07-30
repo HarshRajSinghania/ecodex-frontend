@@ -84,19 +84,19 @@ const Dashboard = () => {
             <div className="stat-item">
               <span className="stat-label">🌱 Plants:</span>
               <span className="stat-value">
-                {stats.typeStats.find(s => s._id === 'plant')?.count || 0}
+                {(stats.typeStats && stats.typeStats.find(s => s._id === 'plant')?.count) || 0}
               </span>
             </div>
             <div className="stat-item">
               <span className="stat-label">🦋 Animals:</span>
               <span className="stat-value">
-                {stats.typeStats.find(s => s._id === 'animal')?.count || 0}
+                {(stats.typeStats && stats.typeStats.find(s => s._id === 'animal')?.count) || 0}
               </span>
             </div>
             <div className="stat-item">
               <span className="stat-label">⭐ Legendary:</span>
               <span className="stat-value">
-                {stats.rarityStats.find(s => s._id === 'legendary')?.count || 0}
+                {(stats.rarityStats && stats.rarityStats.find(s => s._id === 'legendary')?.count) || 0}
               </span>
             </div>
           </div>

@@ -139,21 +139,21 @@ const EcoDEX = () => {
             <div className="stat-card">
               <h3>🌱 Plants</h3>
               <div className="stat-number">
-                {stats.typeStats.find(s => s._id === 'plant')?.count || 0}
+                {(stats.typeStats && stats.typeStats.find(s => s._id === 'plant')?.count) || 0}
               </div>
             </div>
             
             <div className="stat-card">
               <h3>🦋 Animals</h3>
               <div className="stat-number">
-                {stats.typeStats.find(s => s._id === 'animal')?.count || 0}
+                {(stats.typeStats && stats.typeStats.find(s => s._id === 'animal')?.count) || 0}
               </div>
             </div>
             
             <div className="stat-card">
               <h3>⭐ Legendary</h3>
               <div className="stat-number">
-                {stats.rarityStats.find(s => s._id === 'legendary')?.count || 0}
+                {(stats.rarityStats && stats.rarityStats.find(s => s._id === 'legendary')?.count) || 0}
               </div>
             </div>
           </div>
