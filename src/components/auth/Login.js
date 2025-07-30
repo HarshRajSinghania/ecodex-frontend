@@ -42,10 +42,20 @@ const Login = () => {
       loadUser();
       setAlert('Login successful!', 'success');
     } catch (err) {
-      const errors = err.response.data.errors;
-
-      if (errors) {
-        errors.forEach(error => setAlert(error.msg, 'danger'));
+      console.error('Login error:', err);
+      
+      if (err.response && err.response.data && err.response.data.errors) {
+        // Server validation errors
+        err.response.data.errors.forEach(error => setAlert(error.msg, 'danger'));
+      } else if (err.response && err.response.data && err.response.data.msg) {
+        // Server error message
+        setAlert(err.response.data.msg, 'danger');
+      } else if (err.message) {
+        // Network or other errors
+        setAlert(`Login failed: ${err.message}`, 'danger');
+      } else {
+        // Fallback error
+        setAlert('Login failed. Please check your connection and try again.', 'danger');
       }
     }
   };
