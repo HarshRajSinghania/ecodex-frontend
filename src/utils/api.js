@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Use environment variable for API URL, fallback to empty string for relative URLs in development
-const API_URL = process.env.REACT_APP_API_URL || '';
+// Use environment variable for API URL, fallback to backend URL
+const API_URL = process.env.REACT_APP_API_URL || 'https://ecodex-backend.onrender.com';
 
 console.log('API Configuration:', {
   REACT_APP_API_URL: process.env.REACT_APP_API_URL,

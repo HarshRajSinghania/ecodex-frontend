@@ -154,7 +154,7 @@ export class NetworkStatus {
     if (!this.isOnline) return false;
     
     try {
-      const API_URL = process.env.REACT_APP_API_URL || '';
+      const API_URL = process.env.REACT_APP_API_URL || 'https://ecodex-backend.onrender.com';
       const response = await fetch(`${API_URL}/api/health`, {
         method: 'HEAD',
         cache: 'no-cache'
@@ -193,7 +193,7 @@ export class BackgroundSync {
       
       for (const entry of unsyncedEntries) {
         try {
-          const API_URL = process.env.REACT_APP_API_URL || '';
+          const API_URL = process.env.REACT_APP_API_URL || 'https://ecodex-backend.onrender.com';
           const response = await fetch(`${API_URL}/api/ecodex`, {
             method: 'POST',
             headers: {
